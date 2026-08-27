@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>Weather Dashboard</h1>
+      <div class="search">
+        <input id="cityInput" type="search" placeholder="Search city (e.g. Cairo, London)" />
+        <button id="searchBtn">Search</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="current" class="card hidden">
+        <div class="current-header">
+          <h2 id="locationName"></h2>
+          <div id="currentTime" class="muted"></div>
+        </div>
+        <div class="current-body">
+          <div class="temp-block">
+            <div id="temperature" class="temperature"></div>
+            <div id="weatherText" class="weather-text"></div>
+          </div>
+          <div class="details">
+            <div>Wind: <span id="wind"></span></div>
+            <div>Humidity: <span id="humidity"></span></div>
+            <div>Pressure: <span id="pressure"></span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="forecast" class="card hidden">
+        <h3>7-day forecast</h3>
+        <div id="forecastGrid" class="forecast-grid"></div>
+      </section>
+
+      <section id="hourly" class="card hidden">
+        <h3>Hourly (next 24 hrs)</h3>
+        <canvas id="hourlyChart" height="120"></canvas>
+      </section>
+
+      <div id="message" class="muted"></div>
+    </main>
+
+    <footer class="footer muted">
+      Data from Open-Meteo • No API key required
+    </footer>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
